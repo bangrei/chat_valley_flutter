@@ -83,10 +83,16 @@ class _ChatScreenState extends State<ChatScreen> with ChannelEventHandler {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(right: 8.0),
-                          child: CircleAvatar(
+                          child: profileUrl != ""
+                              ? CircleAvatar(
                             backgroundImage: NetworkImage(profileUrl),
                             radius: 20,
-                          ),
+                                )
+                              : const CircleAvatar(
+                                  backgroundColor: Colors.white12,
+                                  radius: 20,
+                                  child: Icon(Icons.person),
+                                ),
                         ),
                         Flexible(
                           child: Container(
